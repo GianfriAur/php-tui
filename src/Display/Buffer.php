@@ -73,7 +73,7 @@ final class Buffer implements Countable, Stringable
         $height = count($lines);
         $width = array_reduce(
             $lines,
-            static fn ($acc, $line) => mb_strwidth($line) > $acc ? mb_strwidth($line) : $acc,
+            static fn (int $acc, string $line): int => mb_strwidth($line) > $acc ? mb_strwidth($line) : $acc,
             0
         );
 

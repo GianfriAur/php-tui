@@ -44,14 +44,14 @@ final class TextRenderer implements ShapePainter
         foreach (array_reverse($glyph->bitmap) as $row) {
             $xbit = 1;
             for ($i = $glyph->boundingBox->size->width + 1; $i >= 0; $i--) {
-                $x = $i + $shape->position->x;
+                $x = (int) ($i + $shape->position->x);
                 $grid[$y][$x] = ($row & $xbit) > 0;
                 $xbit <<= 1;
             }
             $y++;
         }
 
-        return $grid;
+        return array_values($grid);
     }
 
     /**

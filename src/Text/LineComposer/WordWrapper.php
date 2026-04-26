@@ -143,7 +143,7 @@ final class WordWrapper implements LineComposer
             return $width + $grapheme->symbolWidth();
         }, 0);
 
-        return [$currentLine, $lineWidth, $alignment];
+        return [array_values($currentLine), $lineWidth, $alignment];
     }
 
     /**

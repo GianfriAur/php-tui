@@ -17,24 +17,26 @@ final class Display
      * @param array<int,Buffer> $buffers
      */
     public function __construct(
-        private readonly Backend $backend,
-        private array $buffers,
-        private int $current,
+        private readonly Backend        $backend,
+        private array                   $buffers,
+        private int                     $current,
         /** @phpstan-ignore-next-line */
-        private readonly bool $hiddenCursor,
-        private readonly Viewport $viewport,
-        private Area $viewportArea,
-        private Area $lastKnownSize,
-        private Position $lastKnownCursorPosition,
+        private readonly bool           $hiddenCursor,
+        private readonly Viewport       $viewport,
+        private Area                    $viewportArea,
+        private Area                    $lastKnownSize,
+        private Position                $lastKnownCursorPosition,
         private readonly WidgetRenderer $widgetRenderer,
-    ) {
+    )
+    {
     }
 
     public static function new(
-        Backend $backend,
-        Viewport $viewport,
+        Backend        $backend,
+        Viewport       $viewport,
         WidgetRenderer $renderer,
-    ): self {
+    ): self
+    {
         $size = $viewport->size($backend);
         $cursorPos = $viewport->cursorPos($backend);
         $viewportArea = $viewport->area($backend, 0);
@@ -117,7 +119,6 @@ final class Display
      * |                   |
      * +-------------------+
      * ```
-
      * After:
      *
      * ```
@@ -176,7 +177,7 @@ final class Display
         }
 
         $size = $this->backend->size();
-        if ($size == $this->lastKnownSize) {
+        if ((string)$size === (string)$this->lastKnownSize) {
             return;
         }
 

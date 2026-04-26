@@ -14,11 +14,12 @@ final class Cell implements Stringable
 {
     public function __construct(
         public string $char,
-        public Color $fg,
-        public Color $bg,
-        public Color $underline,
-        public int $modifiers
-    ) {
+        public Color  $fg,
+        public Color  $bg,
+        public Color  $underline,
+        public int    $modifiers
+    )
+    {
     }
 
     public function __toString(): string
@@ -71,9 +72,9 @@ final class Cell implements Stringable
     {
         return
             $this->char === $currentCell->char &&
-            $this->fg == $currentCell->fg &&
-            $this->bg == $currentCell->bg &&
+            $this->fg->debugName() === $currentCell->fg->debugName() &&
+            $this->bg->debugName() === $currentCell->bg->debugName() &&
             $this->modifiers === $currentCell->modifiers &&
-            $this->underline == $currentCell->underline;
+            $this->underline->debugName() === $currentCell->underline->debugName();
     }
 }

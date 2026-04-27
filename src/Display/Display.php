@@ -27,16 +27,14 @@ final class Display
         private Area                    $lastKnownSize,
         private Position                $lastKnownCursorPosition,
         private readonly WidgetRenderer $widgetRenderer,
-    )
-    {
+    ) {
     }
 
     public static function new(
         Backend        $backend,
         Viewport       $viewport,
         WidgetRenderer $renderer,
-    ): self
-    {
+    ): self {
         $size = $viewport->size($backend);
         $cursorPos = $viewport->cursorPos($backend);
         $viewportArea = $viewport->area($backend, 0);

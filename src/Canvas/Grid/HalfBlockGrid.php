@@ -63,7 +63,7 @@ final class HalfBlockGrid extends CanvasGrid
             }
 
             $paired = array_merge($paired, array_map(
-                static fn(mixed $u, mixed $l): array => [$u, $l],
+                static fn (mixed $u, mixed $l): array => [$u, $l],
                 $upper,
                 $lower
             ));

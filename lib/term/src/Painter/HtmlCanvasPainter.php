@@ -51,8 +51,7 @@ final class HtmlCanvasPainter implements Painter
     private function __construct(
         int $width,
         int $height,
-    )
-    {
+    ) {
         if ($width < 1 || $height < 1) {
             throw new RuntimeException(sprintf(
                 'Width or height cannot be less than 1, got width: %d, height: %d',

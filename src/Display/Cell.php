@@ -18,8 +18,7 @@ final class Cell implements Stringable
         public Color  $bg,
         public Color  $underline,
         public int    $modifiers
-    )
-    {
+    ) {
     }
 
     public function __toString(): string

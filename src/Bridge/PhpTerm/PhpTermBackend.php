@@ -39,8 +39,7 @@ final class PhpTermBackend implements Backend
          * when getting the cursor position.
          */
         private readonly float           $blockingTimeout = 2.0
-    )
-    {
+    ) {
     }
 
     public static function new(?PhpTermTerminal $terminal = null): self

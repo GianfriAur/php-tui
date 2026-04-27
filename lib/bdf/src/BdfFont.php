@@ -9,7 +9,7 @@ use RuntimeException;
 final class BdfFont
 {
     /**
-     * @param list<BdfGlyph> $glyphs
+     * @param array<BdfGlyph> $glyphs
      */
     public function __construct(
         public readonly BdfMetadata $metadata,
@@ -28,10 +28,10 @@ final class BdfFont
     }
 
     /**
-     * @return list<BdfGlyph>
+     * @return array<BdfGlyph>
      */
     public function glyphs(): array
     {
-        return array_values($this->glyphs);
+        return $this->glyphs;
     }
 }

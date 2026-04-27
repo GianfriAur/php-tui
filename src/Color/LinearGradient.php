@@ -19,7 +19,7 @@ final class LinearGradient implements Color
      * @param non-empty-list<array{float,RgbColor}> $stops
      */
     private function __construct(
-        private array $stops,
+        private readonly array $stops,
         private readonly float $angle,
         private readonly FractionalPosition $origin
     ) {

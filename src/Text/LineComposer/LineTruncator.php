@@ -17,7 +17,7 @@ final class LineTruncator implements LineComposer
     public function __construct(
         private readonly array $lines,
         private readonly int $maxLineWidth,
-        private int $horizontalOffset = 0,
+        private readonly int $horizontalOffset = 0,
     ) {
     }
 

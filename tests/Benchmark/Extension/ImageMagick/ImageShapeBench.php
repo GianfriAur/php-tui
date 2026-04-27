@@ -30,6 +30,7 @@ final class ImageShapeBench
     {
         $this->painter = new StringPainter();
         $terminal = Terminal::new(
+            painter: $this->painter,
             infoProvider: new AggregateInformationProvider([
                 ClosureInformationProvider::new(static function (string $info) {
                     if ($info === Size::class) {
@@ -39,7 +40,6 @@ final class ImageShapeBench
 
             ]),
             rawMode: new TestRawMode(),
-            painter: $this->painter,
         );
         $this->display = DisplayBuilder::default(PhpTermBackend::new($terminal))->build();
     }

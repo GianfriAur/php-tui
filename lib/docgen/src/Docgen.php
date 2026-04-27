@@ -90,11 +90,10 @@ final class Docgen
             $docClass = new DocClass(
                 name: lcfirst($widget->getShortName()),
                 humanName: $this->humanName($widget->getShortName(), $config->stripSuffix),
-                className: $widget->getName(),
                 singular: $config->singular,
-                summary: $this->summary($node),
-                hasExample: $config->hasExamples,
+                className: $widget->getName(),
                 documentation: $this->documentation($node) ?? $this->summary($node),
+                summary: $this->summary($node),
                 params: array_values(array_filter(array_map(function (ReflectionProperty $prop): false|DocParam {
                     if (false === $prop->isPromoted()) {
                         return false;
@@ -118,6 +117,7 @@ final class Docgen
                         description: $this->summary($phpDoc),
                     );
                 }, $widget->getProperties()))),
+                hasExample: $config->hasExamples,
             );
 
             $phpExample = sprintf('%s/%s/%s.php', $this->examplePath, $docClass->singular, $docClass->name);

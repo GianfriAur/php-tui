@@ -32,6 +32,6 @@ final class BdfFont
      */
     public function glyphs(): array
     {
-        return $this->glyphs;
+        return array_values($this->glyphs);
     }
 }

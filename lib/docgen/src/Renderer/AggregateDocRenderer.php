@@ -19,7 +19,7 @@ final class AggregateDocRenderer implements DocRenderer
         $this->renderers = $renderers;
     }
 
-    public function render(DocRenderer $renderer, object $object): ?string
+    public function render(DocRenderer $renderer, object $object): string
     {
         foreach ($this->renderers as $child) {
             if (null !== $out = $child->render($this, $object)) {

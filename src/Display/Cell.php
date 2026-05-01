@@ -14,10 +14,10 @@ final class Cell implements Stringable
 {
     public function __construct(
         public string $char,
-        public Color  $fg,
-        public Color  $bg,
-        public Color  $underline,
-        public int    $modifiers
+        public Color $fg,
+        public Color $bg,
+        public Color $underline,
+        public int $modifiers
     ) {
     }
 

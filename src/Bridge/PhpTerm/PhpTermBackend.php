@@ -38,7 +38,7 @@ final readonly class PhpTermBackend implements Backend
          * Number of seconds to wait for a response from the terminal
          * when getting the cursor position.
          */
-        private float           $blockingTimeout = 2.0
+        private float $blockingTimeout = 2.0
     ) {
     }
 

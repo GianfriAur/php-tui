@@ -62,10 +62,10 @@ final class App
      * @param array<string,Component> $pages
      */
     private function __construct(
-        private Terminal   $terminal,
-        private Display    $display,
+        private Terminal $terminal,
+        private Display $display,
         private ActivePage $activePage,
-        private array      $pages,
+        private array $pages,
     ) {
     }
 

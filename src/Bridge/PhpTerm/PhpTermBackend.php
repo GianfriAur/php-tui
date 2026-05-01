@@ -30,15 +30,15 @@ use PhpTui\Tui\Position\Position;
 use PhpTui\Tui\Style\Modifier;
 use RuntimeException;
 
-final class PhpTermBackend implements Backend
+final readonly class PhpTermBackend implements Backend
 {
     public function __construct(
-        private readonly PhpTermTerminal $terminal,
+        private PhpTermTerminal $terminal,
         /**
          * Number of seconds to wait for a response from the terminal
          * when getting the cursor position.
          */
-        private readonly float           $blockingTimeout = 2.0
+        private float           $blockingTimeout = 2.0
     ) {
     }
 

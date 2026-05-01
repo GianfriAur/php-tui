@@ -20,11 +20,11 @@ use PhpTui\Tui\Extension\ImageMagick\Shape\ImageShape;
 
 #[Iterations(4)]
 #[Revs(25)]
-final class ImageShapeBench
+final readonly class ImageShapeBench
 {
-    private readonly Display $display;
+    private Display $display;
 
-    private readonly StringPainter $painter;
+    private StringPainter $painter;
 
     public function __construct()
     {

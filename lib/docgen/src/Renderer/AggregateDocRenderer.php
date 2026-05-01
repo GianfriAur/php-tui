@@ -7,12 +7,12 @@ namespace PhpTui\Docgen\Renderer;
 use PhpTui\Docgen\DocRenderer;
 use RuntimeException;
 
-final class AggregateDocRenderer implements DocRenderer
+final readonly class AggregateDocRenderer implements DocRenderer
 {
     /**
      * @var DocRenderer[]
      */
-    private readonly array $renderers;
+    private array $renderers;
 
     public function __construct(DocRenderer ...$renderers)
     {

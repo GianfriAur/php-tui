@@ -22,11 +22,11 @@ use PhpTui\Tui\Extension\Core\Widget\CanvasWidget;
 
 #[Iterations(10)]
 #[Revs(25)]
-final class CanvasBench
+final readonly class CanvasBench
 {
-    private readonly Display $display;
+    private Display $display;
 
-    private readonly StringPainter $painter;
+    private StringPainter $painter;
 
     public function __construct()
     {

@@ -39,11 +39,11 @@ use PhpTui\Tui\Widget\Borders;
 use PhpTui\Tui\Widget\Direction;
 use PhpTui\Tui\Widget\Widget;
 
-final class DisplayBench
+final readonly class DisplayBench
 {
-    private readonly Display $display;
+    private Display $display;
 
-    private readonly StringPainter $painter;
+    private StringPainter $painter;
 
     public function __construct()
     {

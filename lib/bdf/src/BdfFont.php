@@ -6,15 +6,15 @@ namespace PhpTui\BDF;
 
 use RuntimeException;
 
-final class BdfFont
+final readonly class BdfFont
 {
     /**
      * @param array<BdfGlyph> $glyphs
      */
     public function __construct(
-        public readonly BdfMetadata $metadata,
-        public readonly BdfProperties $properties,
-        private readonly array $glyphs,
+        public BdfMetadata $metadata,
+        public BdfProperties $properties,
+        private array $glyphs,
     ) {
     }
 

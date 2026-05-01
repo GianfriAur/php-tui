@@ -9,15 +9,15 @@ use PhpTui\Tui\Text\LineComposer;
 use PhpTui\Tui\Text\StyledGrapheme;
 use PhpTui\Tui\Widget\HorizontalAlignment;
 
-final class LineTruncator implements LineComposer
+final readonly class LineTruncator implements LineComposer
 {
     /**
      * @param list<array{list<StyledGrapheme>,HorizontalAlignment}> $lines
      */
     public function __construct(
-        private readonly array $lines,
-        private readonly int $maxLineWidth,
-        private readonly int $horizontalOffset = 0,
+        private array $lines,
+        private int $maxLineWidth,
+        private int $horizontalOffset = 0,
     ) {
     }
 

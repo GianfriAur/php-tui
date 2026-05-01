@@ -11,10 +11,10 @@ use PhpTui\Tui\Canvas\ShapePainter;
 use PhpTui\Tui\Extension\Bdf\FontRegistry;
 use PhpTui\Tui\Position\FloatPosition;
 
-final class TextRenderer implements ShapePainter
+final readonly class TextRenderer implements ShapePainter
 {
     public function __construct(
-        private readonly FontRegistry $registry,
+        private FontRegistry $registry,
     ) {
     }
 
